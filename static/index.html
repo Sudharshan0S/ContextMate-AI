@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#0b1020">
+    <meta name="description" content="ContextMate AI, your context-aware learning assistant.">
+
+    <title>ContextMate AI</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <div class="app-shell">
+        <header class="topbar">
+            <a class="brand" href="/" aria-label="ContextMate AI home">
+                <span class="brand-icon">✦</span>
+                <span>
+                    <strong>ContextMate</strong>
+                    <small>AI LEARNING COMPANION</small>
+                </span>
+            </a>
+
+            <div class="header-actions">
+                <span class="connection-status">
+                    <span class="status-dot"></span>
+                    AI assistant
+                </span>
+
+                <button
+                    id="theme-toggle"
+                    class="icon-button"
+                    type="button"
+                    aria-label="Switch theme"
+                    title="Switch between dark and light mode"
+                >
+                    <span id="theme-icon" aria-hidden="true">☀</span>
+                </button>
+
+                <button id="new-chat-button" class="secondary-button" type="button">
+                    <span aria-hidden="true">＋</span> New chat
+                </button>
+            </div>
+        </header>
+
+        <main class="main-content">
+            <section class="welcome" id="welcome">
+                <div class="welcome-orb" aria-hidden="true">
+                    <span>✦</span>
+                </div>
+
+                <p class="eyebrow">YOUR IDEAS, IN CONTEXT</p>
+                <h1>What are we <span>exploring</span> today?</h1>
+                <p class="welcome-description">
+                    Ask a question, work through a problem, or build on
+                    something you've already discussed.
+                </p>
+
+                <div class="suggestions">
+                    <button class="suggestion-card" type="button"
+                        data-prompt="Explain vector databases using a simple example.">
+                        <span class="suggestion-icon">◈</span>
+                        <strong>Explore AI</strong>
+                        <small>Understand vector databases</small>
+                    </button>
+
+                    <button class="suggestion-card" type="button"
+                        data-prompt="Help me debug a Python function step by step.">
+                        <span class="suggestion-icon">⌘</span>
+                        <strong>Debug code</strong>
+                        <small>Find and fix a problem</small>
+                    </button>
+
+                    <button class="suggestion-card" type="button"
+                        data-prompt="Create a structured roadmap for learning backend development.">
+                        <span class="suggestion-icon">↗</span>
+                        <strong>Learn something</strong>
+                        <small>Build a learning roadmap</small>
+                    </button>
+                </div>
+            </section>
+
+            <section
+                id="messages"
+                class="messages"
+                aria-live="polite"
+                aria-label="Conversation"
+            ></section>
+
+            <div id="typing-indicator" class="typing-indicator" hidden>
+                <span class="assistant-avatar">✦</span>
+                <div class="typing-bubble" aria-label="ContextMate is thinking">
+                    <span></span><span></span><span></span>
+                </div>
+            </div>
+
+            <div class="composer-area">
+                <form id="chat-form" class="composer">
+                    <textarea
+                        id="message-input"
+                        placeholder="Message ContextMate..."
+                        rows="1"
+                        maxlength="10000"
+                        aria-label="Your message"
+                        required
+                    ></textarea>
+
+                    <div class="composer-footer">
+                        <span class="composer-hint">Enter to send · Shift + Enter for a new line</span>
+                        <button id="send-button" class="send-button" type="submit"
+                            aria-label="Send message">
+                            <span>↑</span>
+                        </button>
+                    </div>
+                </form>
+
+                <p id="status" class="status-text" role="status">
+                    Responses may occasionally be inaccurate. Verify important information.
+                </p>
+            </div>
+        </main>
+    </div>
+
+    <script src="/static/script.js"></script>
+</body>
+</html>
