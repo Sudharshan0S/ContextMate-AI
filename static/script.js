@@ -137,14 +137,16 @@ function addMessage(role, content, timestamp = new Date()) {
     scrollToLatest();
 }
 
+
 function scrollToLatest() {
     window.requestAnimationFrame(() => {
-        window.scrollTo({
-            top: document.documentElement.scrollHeight,
+        messages.scrollTo({
+            top: messages.scrollHeight,
             behavior: "smooth",
         });
     });
 }
+
 
 function setBusy(busy) {
     isSending = busy;
